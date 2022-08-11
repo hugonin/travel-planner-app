@@ -17,7 +17,7 @@ The project is a part of the Udacity FEND Web Developer Nanodegree Program . I c
 ## Technologies
 
 - Express 4.18.1
-- Cors 2.8.5
+- Node Fetch 3.2.10
 - OpenWeatherMap API
 
 
