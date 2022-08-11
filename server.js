@@ -68,10 +68,9 @@ function addData(req, res) {
 }
 
 // Setup Server
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000
-  console.log(`Server running on ${port}`);
-}
-app.listen(port);
+const  PORT = process.env.PORT || 8000;
+
+console.log(`Server running on ${PORT}`);
+
+app.listen(PORT);
  
