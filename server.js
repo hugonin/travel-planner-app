@@ -8,6 +8,7 @@ const https = require("https");
 const app = express();
 
 const bodyParser = require("body-parser");
+const { urlToHttpOptions } = require("url");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -31,6 +32,11 @@ function addData(req, res) {
   const today = new Date().toLocaleDateString("fr");
   const year = new Date().getFullYear();
 
+  const fetchOptions = {
+    agent : new https.Agent({ keeAlive: true }),
+    timeout: 5000
+  }
+
 
 
   const url =
@@ -41,7 +47,7 @@ function addData(req, res) {
     "&appid=" +
     apiKey;
 
-  https.get(url, function (response) {
+  https.get(url, fetchOptions, function (response) {
 
     response.on("data", function (data) {
       const weatherData = JSON.parse(data);
