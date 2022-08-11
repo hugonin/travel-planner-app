@@ -29,6 +29,8 @@ function addData(req, res) {
   const query = req.body.cityName;
   const content = req.body.textContent;
   const today = new Date().toLocaleDateString("fr");
+  const year = new Date().getFullYear();
+
 
 
   const url =
@@ -55,6 +57,7 @@ function addData(req, res) {
         imgResult: imageUrl,
         contentResult: content,
         todayResult: today,
+        yearResult: year
       });
 
       req.on("error", (e) => {
@@ -67,6 +70,8 @@ function addData(req, res) {
 // Setup Server
 let port = process.env.PORT;
 if (port == null || port == "") {
+  port = 8000
   console.log(`Server running on ${port}`);
 }
 app.listen(port);
+ 
