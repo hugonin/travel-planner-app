@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Journal App</title>
+    <title>Travel Planner App</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
         integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
@@ -14,16 +14,15 @@
 
 <body>
     <div id="app" class="wrapper">
-        <h1>Weather Journal App</h1>
+        <h1>Travel Planner App</h1>
         <main>
             <section class="left-col">
-                <h2>Journal Setup</h2>
+                <h2>Planner Setup</h2>
                 <form action="/" method="post">
                     <label for="city">Enter a city</label>
                     <input type="text" id="city" name="cityName" placeholder="Enter a city here">
-                    <label for="feelings">How are you feeling today?</label>
-                    <textarea class="myInput" id="feelings" name="textContent" placeholder="Enter your feelings here"
-                        rows="9" cols="50"></textarea>
+                    <label for="date-picker">Select a date</label>
+                    <input type="date" id="date-picker" name="datePicker">
                     <button type="submit" id="generate" class="cta">Go</button>
                 </form>
 
@@ -35,23 +34,45 @@
                     <div class="results-temp">
                         <p> Date: <%= todayResult %>
                         </p>
-                        <p>The temperature in <%= city %> is currently <%= tempResult %> °C</p>
-                        <img src=" <%= imgResult %>">
-                    </div>
+                        <p>My trip to <%= city %>, <%= countryResult%>
+                        </p>
+                        <p>Departing: <%= date %>
+                        </p>
+                        <p id="description">
+                                    Typical weather for then is <%= tempResult %>°C
+                                        <%= descResult %>
+                                            <img height="50" width="50" src=" <%= iconResult %>">
 
-                    <p id="description">The weather shows <%= descResult %>
-                    </p>
-                    <p>
-                        I feel <%= contentResult %>
-                    </p>
+
+                        </p>
+
+                        <img class="main-image" src=" <%= imageResult %>">
+
+
+
+                    </div>
+                    <!-- Countdown-->
+                    <!-- <div class="countdown" id="countdown">
+                        <ul>
+                        </ul>
+                        
+                        <button id="countdown-button">reset</button>
+
+                    </div> -->
+
+
+
+
+
                 </div>
 
             </section>
         </main>
         <footer>
             <div class="footer-main">
-                <p class="footer-fineprint">&copy; <span id="year"> <%= yearResult %></span> | Made with <span aria-label="love"
-                        role="image">&#128150;</span> by Hugonin</p>
+                <p class="footer-fineprint">&copy; <span id="year">
+                        <%= yearResult %>
+                    </span> | Made with <span aria-label="love" role="image">&#128150;</span> by Hugonin</p>
             </div>
         </footer>
     </div>

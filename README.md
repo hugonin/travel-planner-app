@@ -1,6 +1,6 @@
-# Weather Journal App
+# Travel Planner  App
 
-> Weather-Journal App is an asynchronous web app that uses Web API and user data to dynamically update the UI in a Weather Journal application
+> Travel Planner App is an asynchronous web app that obtains a desired trip location & date from the user, and displays weather and an image of the location using information obtained from external APIs
 
 ## Table of contents
 
@@ -18,7 +18,9 @@ The project is a part of the Udacity FEND Web Developer Nanodegree Program . I c
 
 - Express 4.18.1
 - Node Fetch 3.2.10
-- OpenWeatherMap API
+- Geonames API
+- Weatherbit API
+- Pixabay API
 
 
 ## Features

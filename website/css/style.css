@@ -99,7 +99,7 @@ label {
     margin-bottom: .5em;
 }
 
-input[type=text], select, textarea {
+input[type=text], input[type=date], select {
     width: 100%;
     padding: 1em;
     border-radius: .2em;
@@ -107,9 +107,11 @@ input[type=text], select, textarea {
     color: #1B1820;
 }
 
-input[type=text]:focus, textarea:focus {
+input[type=text]:focus, input[type=date]:focus{
     outline: 3px solid #ACACAC;
 }
+
+
 
 ::placeholder {
     font-family: 'Nunito', sans-serif;
@@ -168,6 +170,11 @@ input[type=text]:focus, textarea:focus {
     flex-basis: auto;
 
 }
+
+.main-image {
+    width: 100%;
+    height: auto;
+  }
 
 .footer-fineprint {
     font-size: .85rem;
